@@ -927,19 +927,19 @@
         document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
 
         //profile
-        document.getElementsByClassName('.profile_ispremium').innerHTML = JSON.stringify(DemoApp.initDataUnsafe.receiver.is_premium ? 'Yes' : 'No', null, 2);
+        document.getElementsByClassName('profile_ispremium').innerHTML = JSON.stringify(DemoApp.initDataUnsafe.receiver.is_premium ? 'Yes' : 'No', null, 2);
         if (JSON.stringify(DemoApp.initDataUnsafe.receiver.photo_url, null, 2)) {
-                document.getElementsByClassName('.profile_pic img').setAttribute('src', JSON.stringify(DemoApp.initDataUnsafe.receiver.photo_url, null, 2));
+                document.getElementsByClassName('profile_pic_link').setAttribute('src', JSON.stringify(DemoApp.initDataUnsafe.receiver.photo_url, null, 2));
             } else {
-                document.getElementsByClassName('.profile_pic').style.display = 'none';
+                document.getElementsByClassName('profile_pic').style.display = 'none';
             }
 
-        document.getElementsByClassName('.profile_name').innerHTML = JSON.stringify(DemoApp.initDataUnsafe.receiver.first_name, null, 2) + ' ' + JSON.stringify(DemoApp.initDataUnsafe.receiver.last_name, null, 2);
-        document.getElementsByClassName('.profile_bio').innerHTML = JSON.stringify(DemoApp.initDataUnsafe.receiver.bio, null, 2);
-        document.getElementsByClassName('.profile_username').innerHTML = JSON.stringify(DemoApp.initDataUnsafe.receivername, null, 2);
-        document.getElementsByClassName('.profile_id').innerHTML = JSON.stringify(DemoApp.initDataUnsafe.receiver.id, null, 2);
-        document.getElementsByClassName('.profile_joindate').innerHTML = JSON.stringify(DemoApp.initDataUnsafe.receiver.join_date, null, 2);
-        document.getElementsByClassName('.profile_isspam').innerHTML = JSON.stringify(DemoApp.initDataUnsafe.receiver.allow_write_to_pm ? 'Yes' : 'No', null, 2);
+        document.getElementsByClassName('profile_name').innerHTML = JSON.stringify(DemoApp.initDataUnsafe.receiver.first_name, null, 2) + ' ' + JSON.stringify(DemoApp.initDataUnsafe.receiver.last_name, null, 2);
+        document.getElementsByClassName('profile_bio').innerHTML = JSON.stringify(DemoApp.initDataUnsafe.receiver.bio, null, 2);
+        document.getElementsByClassName('profile_username').innerHTML = JSON.stringify(DemoApp.initDataUnsafe.receivername, null, 2);
+        document.getElementsByClassName('profile_id').innerHTML = JSON.stringify(DemoApp.initDataUnsafe.receiver.id, null, 2);
+        document.getElementsByClassName('profile_joindate').innerHTML = JSON.stringify(DemoApp.initDataUnsafe.receiver.join_date, null, 2);
+        document.getElementsByClassName('profile_isspam').innerHTML = JSON.stringify(DemoApp.initDataUnsafe.receiver.allow_write_to_pm ? 'Yes' : 'No', null, 2);
         
 
         document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
