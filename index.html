@@ -927,19 +927,18 @@
         document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
 
         //profile
-        $('.profile_ispremium').innerHTML = DemoApp.initDataUnsafe.receiver.user.is_premium ? 'Yes' : 'No';
+        $('.profile_ispremium').innerHTML = DemoApp.initDataUnsafe.receiver.is_premium ? 'Yes' : 'No';
         if (DemoApp.initDataUnsafe.receiver.photo_url) {
                 $('.profile_pic img').setAttribute('src', DemoApp.initDataUnsafe.receiver.photo_url);
             } else {
                 $('.profile_pic').style.display = 'none';
             }
-        $('.profile_pic img').src = DemoApp.initDataUnsafe.receiver.user.photo_url;
-        $('.profile_name').innerHTML = DemoApp.initDataUnsafe.receiver.user.first_name + ' ' + DemoApp.initDataUnsafe.receiver.user.last_name;
-        $('.profile_bio').innerHTML = DemoApp.initDataUnsafe.receiver.user.bio;
-        $('.profile_username').innerHTML = DemoApp.initDataUnsafe.receiver.user.username;
-        $('.profile_id').innerHTML = DemoApp.initDataUnsafe.receiver.user.id;
-        $('.profile_joindate').innerHTML = DemoApp.initDataUnsafe.receiver.user.join_date;
-        $('.profile_isspam').innerHTML = DemoApp.initDataUnsafe.receiver.user.allow_write_to_pm ? 'Yes' : 'No';
+        $('.profile_name').innerHTML = DemoApp.initDataUnsafe.receiver.first_name + ' ' + DemoApp.initDataUnsafe.receiver.last_name;
+        $('.profile_bio').innerHTML = DemoApp.initDataUnsafe.receiver.bio;
+        $('.profile_username').innerHTML = DemoApp.initDataUnsafe.receivername;
+        $('.profile_id').innerHTML = DemoApp.initDataUnsafe.receiver.id;
+        $('.profile_joindate').innerHTML = DemoApp.initDataUnsafe.receiver.join_date;
+        $('.profile_isspam').innerHTML = DemoApp.initDataUnsafe.receiver.allow_write_to_pm ? 'Yes' : 'No';
 
 
         document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
