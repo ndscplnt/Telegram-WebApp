@@ -330,18 +330,46 @@
         small {
             font-size: 12px;
         }
+        #profile {
+            border: 5px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+
+
     </style>
 </head>
 
 <body class="" style="visibility: block;">
 
+
+<img src="assets/bg_960x540.gif" alt="header gif">
 <section id="top_sect">
-    <div class="main-container">
+    <div class="main-container hint">
         <h1>Telegram WebApp Demo</hh1>
         <p>Here you can test the Telegram WebApp API</p>
-        <p>Version: <span id="ver"></span></p>
-        <p>Platform: <span id="platform"></span></p>
     </div>
+</section>
+
+<section id="profile">
+    <div class="main-container">
+        <h2>Profile</h2>
+        <div class="columns">
+            <div>
+                <img src="https://telegram.org/img/t_logo.png" class="chat_img" alt="Profile image">
+            </div>
+            <div>
+                <p>Name: <span id="peer_name"></span></p>
+                <p>Phone: <span id="peer_phone"></span></p>
+                <p>Email: <span id="peer_email"></span></p>
+            </div>
+        </div>
+        Version: <span id="ver"></span></p>
+        Platform: <span id="platform"></span></p>
+    </div>
+
 
 <script type="application/javascript">
 
