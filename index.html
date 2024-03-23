@@ -429,7 +429,7 @@
 
         .profile-card__name {
             font-weight: 700;
-            font-size: 24px;
+            font-size: 1.5em;
             color: var(--tg-theme-text-color);
             margin-bottom: 15px;
         }
@@ -449,13 +449,13 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 18px;
+            font-size: 1em;
             font-weight: 600;
         }
 
         .profile-card-loc__icon {
             display: inline-flex;
-            font-size: 27px;
+            font-size: 1.2em;
             margin-right: 10px;
         }
 
@@ -474,7 +474,7 @@
 
         .profile-card-inf__title {
             font-weight: 700;
-            font-size: 27px;
+            font-size: 1.2em;
             color: var(--tg-theme-text-color);
         }
 
@@ -927,14 +927,14 @@
         document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
 
         //profile
-        document.querySelector('.profile_ispremium').src = DemoApp.initDataUnsafe.user.is_premium ? 'Yes' : 'No';
-        document.querySelector('.profile_pic img').src = DemoApp.initDataUnsafe.user.photo_url;
-        document.querySelector('.profile_name').textContent = DemoApp.initDataUnsafe.user.first_name + ' ' + DemoApp.initDataUnsafe.user.last_name;
-        document.querySelector('.profile_bio').textContent = DemoApp.initDataUnsafe.user.bio;
-        document.querySelector('.profile_username').textContent = DemoApp.initDataUnsafe.user.username;
-        document.querySelector('.profile_id').textContent = DemoApp.initDataUnsafe.user.id;
-        document.querySelector('.profile_joindate').textContent = DemoApp.initDataUnsafe.user.join_date;
-        document.querySelector('.profile_isspam').textContent = DemoApp.initDataUnsafe.user.allow_write_to_pm ? 'Yes' : 'No';
+        document.querySelector('.profile_ispremium').src = DemoApp.initDataUnsafe.receiver.user.is_premium ? 'Yes' : 'No';
+        document.querySelector('.profile_pic img').src = DemoApp.initDataUnsafe.receiver.user.photo_url;
+        document.querySelector('.profile_name').textContent = DemoApp.initDataUnsafe.receiver.user.first_name + ' ' + DemoApp.initDataUnsafe.receiver.user.last_name;
+        document.querySelector('.profile_bio').textContent = DemoApp.initDataUnsafe.receiver.user.bio;
+        document.querySelector('.profile_username').textContent = DemoApp.initDataUnsafe.receiver.user.username;
+        document.querySelector('.profile_id').textContent = DemoApp.initDataUnsafe.receiver.user.id;
+        document.querySelector('.profile_joindate').textContent = DemoApp.initDataUnsafe.receiver.user.join_date;
+        document.querySelector('.profile_isspam').textContent = DemoApp.initDataUnsafe.receiver.user.allow_write_to_pm ? 'Yes' : 'No';
 
 
 
