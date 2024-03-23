@@ -927,14 +927,19 @@
         document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
 
         //profile
-        document.querySelector('.profile_ispremium').src = DemoApp.initDataUnsafe.receiver.user.is_premium ? 'Yes' : 'No';
+        document.querySelector('.profile_ispremium').innerHTML = DemoApp.initDataUnsafe.receiver.user.is_premium ? 'Yes' : 'No';
+        if (DemoApp.initDataUnsafe.receiver.photo_url) {
+                document.querySelector('.profile_pic img').setAttribute('src', DemoApp.initDataUnsafe.receiver.photo_url);
+            } else {
+                document.getElementById('.profile_pic img').style.display = 'none';
+            }
         document.querySelector('.profile_pic img').src = DemoApp.initDataUnsafe.receiver.user.photo_url;
-        document.querySelector('.profile_name').textContent = DemoApp.initDataUnsafe.receiver.user.first_name + ' ' + DemoApp.initDataUnsafe.receiver.user.last_name;
-        document.querySelector('.profile_bio').textContent = DemoApp.initDataUnsafe.receiver.user.bio;
-        document.querySelector('.profile_username').textContent = DemoApp.initDataUnsafe.receiver.user.username;
-        document.querySelector('.profile_id').textContent = DemoApp.initDataUnsafe.receiver.user.id;
-        document.querySelector('.profile_joindate').textContent = DemoApp.initDataUnsafe.receiver.user.join_date;
-        document.querySelector('.profile_isspam').textContent = DemoApp.initDataUnsafe.receiver.user.allow_write_to_pm ? 'Yes' : 'No';
+        document.querySelector('.profile_name').innerHTML = DemoApp.initDataUnsafe.receiver.user.first_name + ' ' + DemoApp.initDataUnsafe.receiver.user.last_name;
+        document.querySelector('.profile_bio').innerHTML = DemoApp.initDataUnsafe.receiver.user.bio;
+        document.querySelector('.profile_username').innerHTML = DemoApp.initDataUnsafe.receiver.user.username;
+        document.querySelector('.profile_id').innerHTML = DemoApp.initDataUnsafe.receiver.user.id;
+        document.querySelector('.profile_joindate').innerHTML = DemoApp.initDataUnsafe.receiver.user.join_date;
+        document.querySelector('.profile_isspam').innerHTML = DemoApp.initDataUnsafe.receiver.user.allow_write_to_pm ? 'Yes' : 'No';
 
 
 
