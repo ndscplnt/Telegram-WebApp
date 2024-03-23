@@ -332,33 +332,24 @@
             font-size: 12px;
         }
 
-        #profile {
-            border: 5px solid #ccc;
-            border-radius: 5px;
-            padding: 20px;
-            margin-top: 20px;
-        }
-
         .header-img {
             width: 100%;
+            border-bottom: 1px solid #ccc;
             position: relative;
             top: 0;
             left: 0;
         }
 
         /* profile */
+        #profile {
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
         a,
         a:hover {
             text-decoration: none;
-        }
-
-        .icon {
-            display: inline-block;
-            width: 1em;
-            height: 1em;
-            stroke-width: 0;
-            stroke: currentColor;
-            fill: currentColor;
         }
 
         .wrapper {
@@ -500,7 +491,7 @@
 <body class="" style="visibility: block;">
 
 
-    <img src="assets/bg_960x540.gif" alt="header gif" class="header-img">
+    <!-- <img src="assets/bg_960x540.gif" alt="header gif" class="header-img"> -->
     </section>
     <section id="profile">
         <div class="wrapper">
@@ -930,6 +921,17 @@
         }
         document.getElementById('with_webview_btn').style.display = !!DemoApp.initDataUnsafe.query_id && !DemoApp.initDataUnsafe.receiver ? 'block' : 'none';
         document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
+
+        //profile
+        document.querySelector('.profile_pic img').src = DemoApp.initDataUnsafe.receiver.photo_url;
+        document.querySelector('.profile_name').textContent = DemoApp.initDataUnsafe.receiver.first_name + ' ' + DemoApp.initDataUnsafe.receiver.last_name;
+        document.querySelector('.profile_bio').textContent = DemoApp.initDataUnsafe.receiver.bio;
+        document.querySelector('.profile_username').textContent = DemoApp.initDataUnsafe.receiver.username;
+        document.querySelector('.profile_id').textContent = DemoApp.initDataUnsafe.receiver.id;
+        document.querySelector('.profile_joindate').textContent = DemoApp.initDataUnsafe.receiver.join_date;
+        document.querySelector('.profile_isspam').textContent = DemoApp.initDataUnsafe.receiver.is_spam ? 'Yes' : 'No';
+        
+
 
         document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
         document.getElementById('regular_link').setAttribute('href', document.getElementById('regular_link').getAttribute('href') + location.hash);
