@@ -501,29 +501,33 @@
                 </div>
 
                 <div class="profile-card__cnt js-profile-cnt">
-                    <div class="profile-card__name profile_name">name surname</div>
-                    <div class="profile-card__txt profile_bio">bio</div>
+                    <div class="profile-card__name profile_name">wait</div>
+                    <div class="profile-card__txt profile_bio">wait</div>
                     <div class="profile-card-loc">
                         <!-- <span class="profile-card-loc__icon">
                             <svg class="icon">
                                 <use xlink:href="#icon-location"></use>
                             </svg>
                         </span> -->
-                        <span class="profile-card-loc__txt profile_username">username</span>
+                        <span class="profile-card-loc__txt profile_username">wait</span>
                     </div>
 
                     <div class="profile-card-inf">
                         <div class="profile-card-inf__item">
                             <div class="profile-card-inf__title">ID</div>
-                            <div class="profile-card-inf__txt profile_id">ID</div>
+                            <div class="profile-card-inf__txt profile_id">wait</div>
                         </div>
                         <div class="profile-card-inf__item">
                             <div class="profile-card-inf__title">Join Date</div>
-                            <div class="profile-card-inf__txt profile_joindate">JoinDate</div>
+                            <div class="profile-card-inf__txt profile_joindate">wait</div>
                         </div>
                         <div class="profile-card-inf__item">
-                            <div class="profile-card-inf__title">Limits</div>
-                            <div class="profile-card-inf__txt profile_isspam">Limit</div>
+                            <div class="profile-card-inf__title">Premium</div>
+                            <div class="profile-card-inf__txt profile_ispremium">wait</div>
+                        </div>
+                        <div class="profile-card-inf__item">
+                            <div class="profile-card-inf__title">Limited</div>
+                            <div class="profile-card-inf__txt profile_isspam">wait</div>
                         </div>
                     </div>
                 </div>
@@ -923,14 +927,15 @@
         document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
 
         //profile
-        document.querySelector('.profile_pic img').src = DemoApp.initDataUnsafe.receiver.photo_url;
-        document.querySelector('.profile_name').textContent = DemoApp.initDataUnsafe.receiver.first_name + ' ' + DemoApp.initDataUnsafe.receiver.last_name;
-        document.querySelector('.profile_bio').textContent = DemoApp.initDataUnsafe.receiver.bio;
-        document.querySelector('.profile_username').textContent = DemoApp.initDataUnsafe.receiver.username;
-        document.querySelector('.profile_id').textContent = DemoApp.initDataUnsafe.receiver.id;
-        document.querySelector('.profile_joindate').textContent = DemoApp.initDataUnsafe.receiver.join_date;
-        document.querySelector('.profile_isspam').textContent = DemoApp.initDataUnsafe.receiver.is_spam ? 'Yes' : 'No';
-        
+        document.querySelector('.profile_ispremium').src = DemoApp.initDataUnsafe.user.is_premium ? 'Yes' : 'No';
+        document.querySelector('.profile_pic img').src = DemoApp.initDataUnsafe.user.photo_url;
+        document.querySelector('.profile_name').textContent = DemoApp.initDataUnsafe.user.first_name + ' ' + DemoApp.initDataUnsafe.user.last_name;
+        document.querySelector('.profile_bio').textContent = DemoApp.initDataUnsafe.user.bio;
+        document.querySelector('.profile_username').textContent = DemoApp.initDataUnsafe.user.username;
+        document.querySelector('.profile_id').textContent = DemoApp.initDataUnsafe.user.id;
+        document.querySelector('.profile_joindate').textContent = DemoApp.initDataUnsafe.user.join_date;
+        document.querySelector('.profile_isspam').textContent = DemoApp.initDataUnsafe.user.allow_write_to_pm ? 'Yes' : 'No';
+
 
 
         document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
