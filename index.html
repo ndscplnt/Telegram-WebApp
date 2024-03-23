@@ -821,32 +821,32 @@
             },
 
             // Other
-            apiRequest(method, data, onCallback) {
-                // DISABLE BACKEND FOR FRONTEND DEMO
-                // YOU CAN USE YOUR OWN REQUESTS TO YOUR OWN BACKEND
-                // CHANGE THIS CODE TO YOUR OWN
-                return onCallback && onCallback({ error: 'This function (' + method + ') should send requests to your backend. Please, change this code to your own.' });
+        //     apiRequest(method, data, onCallback) {
+        //         // DISABLE BACKEND FOR FRONTEND DEMO
+        //         // YOU CAN USE YOUR OWN REQUESTS TO YOUR OWN BACKEND
+        //         // CHANGE THIS CODE TO YOUR OWN
+        //         return onCallback && onCallback({ error: 'This function (' + method + ') should send requests to your backend. Please, change this code to your own.' });
 
-                const authData = DemoApp.initData || '';
-                fetch('/demo/api', {
-                    method: 'POST',
-                    body: JSON.stringify(Object.assign(data, {
-                        _auth: authData,
-                        method: method,
-                    })),
-                    credentials: 'include',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                }).then(function (response) {
-                    return response.json();
-                }).then(function (result) {
-                    onCallback && onCallback(result);
-                }).catch(function (error) {
-                    onCallback && onCallback({ error: 'Server error' });
-                });
-            }
-        }
+        //         const authData = DemoApp.initData || '';
+        //         fetch('/demo/api', {
+        //             method: 'POST',
+        //             body: JSON.stringify(Object.assign(data, {
+        //                 _auth: authData,
+        //                 method: method,
+        //             })),
+        //             credentials: 'include',
+        //             headers: {
+        //                 'Content-Type': 'application/json'
+        //             }
+        //         }).then(function (response) {
+        //             return response.json();
+        //         }).then(function (result) {
+        //             onCallback && onCallback(result);
+        //         }).catch(function (error) {
+        //             onCallback && onCallback({ error: 'Server error' });
+        //         });
+        //     }
+         }
 
         const DemoAppMenu = {
             init() {
@@ -927,18 +927,19 @@
         document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
 
         //profile
-        $('.profile_ispremium').innerHTML = DemoApp.initDataUnsafe.receiver.is_premium ? 'Yes' : 'No';
-        if (DemoApp.initDataUnsafe.receiver.photo_url) {
-                $('.profile_pic img').setAttribute('src', DemoApp.initDataUnsafe.receiver.photo_url);
+        $('.profile_ispremium').innerHTML = JSON.stringify(DemoApp.initDataUnsafe.receiver.is_premium ? 'Yes' : 'No', null, 2);
+        if (JSON.stringify(DemoApp.initDataUnsafe.receiver.photo_url, null, 2)) {
+                $('.profile_pic img').setAttribute('src', JSON.stringify(DemoApp.initDataUnsafe.receiver.photo_url, null, 2));
             } else {
                 $('.profile_pic').style.display = 'none';
             }
-        $('.profile_name').innerHTML = DemoApp.initDataUnsafe.receiver.first_name + ' ' + DemoApp.initDataUnsafe.receiver.last_name;
-        $('.profile_bio').innerHTML = DemoApp.initDataUnsafe.receiver.bio;
-        $('.profile_username').innerHTML = DemoApp.initDataUnsafe.receivername;
-        $('.profile_id').innerHTML = DemoApp.initDataUnsafe.receiver.id;
-        $('.profile_joindate').innerHTML = DemoApp.initDataUnsafe.receiver.join_date;
-        $('.profile_isspam').innerHTML = DemoApp.initDataUnsafe.receiver.allow_write_to_pm ? 'Yes' : 'No';
+
+        $('.profile_name').innerHTML = JSON.stringify(DemoApp.initDataUnsafe.receiver.first_name, null, 2) + ' ' + JSON.stringify(DemoApp.initDataUnsafe.receiver.last_name, null, 2);
+        $('.profile_bio').innerHTML = JSON.stringify(DemoApp.initDataUnsafe.receiver.bio, null, 2);
+        $('.profile_username').innerHTML = JSON.stringify(DemoApp.initDataUnsafe.receivername, null, 2);
+        $('.profile_id').innerHTML = JSON.stringify(DemoApp.initDataUnsafe.receiver.id, null, 2);
+        $('.profile_joindate').innerHTML = JSON.stringify(DemoApp.initDataUnsafe.receiver.join_date, null, 2);
+        $('.profile_isspam').innerHTML = JSON.stringify(DemoApp.initDataUnsafe.receiver.allow_write_to_pm ? 'Yes' : 'No', null, 2);
 
 
         document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
